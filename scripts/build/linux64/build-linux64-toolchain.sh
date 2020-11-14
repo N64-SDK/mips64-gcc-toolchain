@@ -106,7 +106,6 @@ if [ ! -f stamps/gcc-configure ]; then
     --disable-multilib \
     --disable-nls \
     --disable-rpath \
-    --disable-static \
     --disable-threads \
     --disable-win32-registry \
     --enable-lto \
