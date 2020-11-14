@@ -42,7 +42,7 @@ if [ ! -f stamps/binutils-configure ]; then
   ../binutils-source/configure \
     --build=x86_64-linux-gnu \
     --host=x86_64-w64-mingw32 \
-    --prefix="${SCRIPT_DIR}" \
+    --prefix=/usr/x86_64-w64-mingw32 \
     --with-lib-path="${SCRIPT_DIR}/lib" \
     --target=mips64-elf --with-arch=vr4300 \
     --enable-64-bit-bfd \
@@ -124,7 +124,7 @@ if [ ! -f stamps/gcc-configure ]; then
   ../gcc-source/configure \
     --build=x86_64-linux-gnu \
     --host=x86_64-w64-mingw32 \
-    --prefix="${SCRIPT_DIR}" \
+    --prefix=/usr/x86_64-w64-mingw32 \
     --target=mips64-elf --with-arch=vr4300 \
     --enable-languages=c,c++ --without-headers --with-newlib \
     --with-gnu-as=${SCRIPT_DIR}/bin/mips64-elf-as.exe \
@@ -202,7 +202,7 @@ if [ ! -f stamps/make-configure ]; then
   ../make-source/configure \
     --build=x86_64-linux-gnu \
     --host=x86_64-w64-mingw32 \
-    --prefix="${SCRIPT_DIR}" \
+    --prefix=/usr/x86_64-w64-mingw32 \
     --disable-largefile \
     --disable-nls \
     --disable-rpath
@@ -260,6 +260,7 @@ if [ ! -f stamps/newlib-configure ]; then
         ../newlib-source/configure \
         --build=x86_64-linux-gnu \
         --host=x86_64-w64-mingw32 \
+        --prefix=/usr/x86_64-w64-mingw32 \
         --disable-bootstrap \
         --disable-build-poststage1-with-cxx \
         --disable-build-with-cxx \
@@ -286,7 +287,6 @@ if [ ! -f stamps/newlib-configure ]; then
         --enable-newlib-io-c99-formats \
         --enable-newlib-io-pos-args \
         --enable-newlib-reent-small \
-        --prefix="${SCRIPT_DIR}" \
         --target=mips64-elf --with-arch=vr4300 \
         --with-endian=little \
         --without-cloog \
@@ -332,7 +332,7 @@ if [ ! -f stamps/gdb-configure ]; then
         --disable-werror \
         --build=x86_64-linux-gnu \
         --host=x86_64-w64-mingw32 \
-        --prefix="${SCRIPT_DIR}" \
+        --prefix=/usr/x86_64-w64-mingw32 \
         --target=mips64-elf --with-arch=vr4300
          popd
 
