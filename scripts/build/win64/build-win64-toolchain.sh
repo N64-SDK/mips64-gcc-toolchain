@@ -146,12 +146,12 @@ if [ ! -f stamps/gcc-configure ]; then
     --disable-multilib \
     --disable-nls \
     --disable-rpath \
-    --disable-static \
     --disable-symvers \
     --disable-threads \
     --disable-win32-registry \
     --enable-lto \
     --enable-plugin \
+    --enable-static \
     --without-included-gettext
   popd
 
