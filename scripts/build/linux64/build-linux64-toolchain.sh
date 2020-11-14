@@ -12,6 +12,14 @@ set -eu
 # 'LICENSE', which is part of this source code package.
 #
 
+getnumproc() {
+which getconf >/dev/null 2>/dev/null && {
+	getconf _NPROCESSORS_ONLN 2>/dev/null || getconf NPROCESSORS_ONLN 2>/dev/null || echo 1;
+} || echo 1;
+};
+
+numproc=`getnumproc`
+
 BINUTILS="https://ftp.gnu.org/gnu/binutils/binutils-2.35.tar.bz2"
 GCC="https://ftp.gnu.org/gnu/gcc/gcc-10.2.0/gcc-10.2.0.tar.gz"
 MAKE="https://ftp.gnu.org/gnu/make/make-4.3.tar.gz"
@@ -56,7 +64,7 @@ fi
 
 if [ ! -f stamps/binutils-build ]; then
   pushd binutils-build
-  make --jobs=4
+  make --jobs=${numproc}
   popd
 
   touch stamps/binutils-build
@@ -119,7 +127,7 @@ fi
 
 if [ ! -f stamps/gcc-build ]; then
   pushd gcc-build
-  make --jobs=4 all-gcc
+  make --jobs=${numproc} all-gcc
   popd
 
   touch stamps/gcc-build
@@ -141,7 +149,7 @@ fi
 
 if [ ! -f stamps/libgcc-build ]; then
   pushd gcc-build
-  make --jobs=4 all-target-libgcc
+  make --jobs=${numproc} all-target-libgcc
   popd
 
   touch stamps/libgcc-build
@@ -180,7 +188,7 @@ fi
 
 if [ ! -f stamps/make-build ]; then
   pushd make-build
-  make --jobs=4
+  make --jobs=${numproc}
   popd
 
   touch stamps/make-build
@@ -249,7 +257,7 @@ fi
 
 if [ ! -f stamps/newlib-build ]; then
   pushd newlib-build
-  make --jobs=4
+  make --jobs=${numproc}
   popd
 
   touch stamps/newlib-build
@@ -288,7 +296,7 @@ fi
 
 if [ ! -f stamps/gdb-build ]; then
   pushd gdb-build
-  make --jobs=4
+  make --jobs=${numproc}
   popd
 
   touch stamps/gdb-build
