@@ -2,10 +2,10 @@
 set -eu
 
 #
-# tools/build-win64-toolchain.sh: Win64 toolchain build script.
+# Win64 GCC toolchain build script.
 #
-# n64chain: A (free) open-source N64 development toolchain.
-# Copyright 2014-2018 Tyler J. Stachecki <stachecki.tyler@gmail.com>
+# Based upon: Originally based upon n64chain: A (free) open-source N64 development toolchain.
+# Copyright 2014-2018 Tyler J. Stachecki <stachecki.tyler@gmail.com> and 2019 N64-TOOLS contributers.
 # modified for N64-TOOLS by Robin Jones
 #
 # This file is subject to the terms and conditions defined in
