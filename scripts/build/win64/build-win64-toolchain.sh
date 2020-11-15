@@ -4,9 +4,9 @@ set -eu
 #
 # Win64 GCC toolchain build script.
 #
-# Based upon: Originally based upon n64chain: A (free) open-source N64 development toolchain.
-# Copyright 2014-2018 Tyler J. Stachecki <stachecki.tyler@gmail.com> and 2019 N64-TOOLS contributers.
-# modified for N64-TOOLS by Robin Jones
+# Originally based upon n64chain: A (free) open-source N64 development toolchain.
+# Copyright 2014-2018 Tyler J. Stachecki <stachecki.tyler@gmail.com>. 2019+ by N64-TOOLS contributers
+# Modified for N64-TOOLS 2019+ by Robin Jones
 #
 # This file is subject to the terms and conditions defined in
 # 'LICENSE', which is part of this source code package.
